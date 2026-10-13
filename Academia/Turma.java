@@ -13,9 +13,13 @@ public class Turma {
   
 
    public Turma(String nome, Instrutor instrutor, int capacidade) {
+
+    if (capacidade <= 0) {
+        throw new IllegalArgumentException("Capacidade Inválida");
+    }
+    this.capacidade = capacidade;
     this.nome = nome;
     this.instrutor = instrutor;
-    this.capacidade = capacidade;
 
    }
 

@@ -10,7 +10,6 @@ public static void main(String[] args) {
     List<Notificavel> lista = new ArrayList<>();
 
 
-
 PlanoMensal plano1 = new PlanoMensal(100);
 Aluno aluno1 = new Aluno("João", plano1);
 Aluno aluno2 = new Aluno("Rafa", plano1);
@@ -24,6 +23,7 @@ for (Notificavel m : lista) {
     m.notificar("Precisa Treinar mais");
 }
 Turma turma = new Turma("Turma", instrutor, 2);
+
 
 try {turma.matricular(aluno3);
     turma.matricular(aluno1);
