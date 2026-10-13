@@ -41,4 +41,16 @@ public class Turma {
     }
 
    }
+
+   public void notificarTodos(String mensagem) {
+      List<Notificavel> todos = new ArrayList<>();
+      todos.add(instrutor);
+      todos.addAll(turma);
+
+
+      for (Notificavel destinario : todos) {
+        destinario.notificar(mensagem);
+      }
+
+   }
 }

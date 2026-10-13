@@ -32,6 +32,8 @@ try {turma.matricular(aluno3);
    System.out.println(e.getMessage());
 }
 
+turma.notificarTodos("Aula Amanhã às 7h");
+
 
 
 }
