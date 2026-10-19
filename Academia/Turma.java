@@ -15,7 +15,7 @@ public class Turma {
    public Turma(String nome, Instrutor instrutor, int capacidade) {
 
     if (capacidade <= 0) {
-        throw new IllegalArgumentException("Capacidade Inválida");
+        throw new IllegalArgumentException("Capacidade Inválida: "+ capacidade);
     }
     this.capacidade = capacidade;
     this.nome = nome;
@@ -56,5 +56,14 @@ public class Turma {
         destinario.notificar(mensagem);
       }
 
+   }
+
+   public void listarMensalidades() {
+   
+   for (Aluno aluno : turma) {
+    System.out.println("Aluno: " + aluno.getNome() + " Mensalidade: "+ aluno.getPlano().calcularMensalidade());
+    
+   }
+    
    }
 }
