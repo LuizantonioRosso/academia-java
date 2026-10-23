@@ -1,0 +1,35 @@
+Sistema de Academia em Java
+
+Sistema de gerenciamento de academia desenvolvido em Java, aplicando interfaces, tratamento de exceções, herança e polimorfismo.
+
+📋 Funcionalidades
+Planos (mensal, trimestral e anual), cada um calculando a mensalidade com seu próprio desconto
+Cadastro de alunos (vinculados a um plano) e de instrutores
+Turmas com capacidade limitada e matrícula com controle de lotação
+Notificação de todos os participantes da turma (alunos e instrutor) de uma só vez
+Listagem das mensalidades dos alunos matriculados
+🏗️ Estrutura do projeto
+Classe	Responsabilidade
+Plano	Classe abstrata base, com o valor base e o cálculo de mensalidade abstrato
+PlanoMensal, PlanoTrimestral, PlanoAnual	Subclasses concretas, cada uma com sua regra de desconto
+Notificavel	Interface que define a habilidade de receber uma notificação
+Aluno, Instrutor	Classes sem parentesco entre si, que implementam Notificavel
+Turma	Gerencia matrículas, notificações e a listagem de mensalidades
+TurmaLotadaException	Exceção verificada, lançada quando a turma está cheia
+🧠 Conceitos aplicados
+Interface — Notificavel é implementada por Aluno e Instrutor, que não têm relação de herança, mas compartilham a mesma habilidade; uma única lista de Notificavel percorre os dois
+Herança e polimorfismo — calcularMensalidade() é abstrato em Plano e se comporta de forma diferente em cada subclasse
+Exceção verificada — TurmaLotadaException (extends Exception) obriga quem matricula a tratar a lotação com try/catch
+Exceção não verificada — o construtor de Turma lança IllegalArgumentException para capacidade inválida
+Constantes — os fatores de desconto dos planos usam private static final
+Encapsulamento e composição — atributos privados; Turma possui um Instrutor e uma lista de Aluno, e Aluno possui um Plano
+▶️ Como executar
+Clone o repositório
+Compile as classes dentro do pacote Academia
+Execute a classe Main
+bash
+javac Academia/*.java
+java Academia.Main
+👤 Autor
+
+Desenvolvido por Luiz Rosso, estudante de Sistema de Informação, como projeto de estudo em Java e POO.
